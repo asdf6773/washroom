@@ -5,9 +5,8 @@
  var bodyParser = require('body-parser');
  var socket = require("socket.io")
  var request = require('request');
- var socket_record = require('socket.io-client')('http://192.168.137.1:8888/update');
+ var socket_record = require('socket.io-client')('http://127.0.0.1:8888/update');
  var router = express.Router();
- // var atomicBomb = express.Router();
  var server = app.listen(8001);
  var io = socket(server);
  var uploadName;
@@ -31,7 +30,6 @@
          setInterval(function() {
              socket_record.emit("update", consoleData)
          }, 1000);
-
      }
  })
  request("http://127.0.0.1:8888/record", function(error, response, body) {
