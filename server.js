@@ -32,14 +32,14 @@
          }, 1000);
      }
  })
- request("http://127.0.0.1:8888/record", function(error, response, body) {
+ request("http://127.0.0.1:8888/comments", function(error, response, body) {
      if (!error && response.statusCode == 200) {
          var data = JSON.parse(body);
          comments = data;
          console.log("total comments:" + comments.comments.length+" last:"+comments.comments[comments.comments.length-1].comment)
      }
  })
- request("http://127.0.0.1:8888/record", function(error, response, body) {
+ request("http://127.0.0.1:8888/weibo", function(error, response, body) {
      if (!error && response.statusCode == 200) {
          var data = JSON.parse(body);
          consoleData = data;
